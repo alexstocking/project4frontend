@@ -1,0 +1,19 @@
+.custom-navbar {
+    background-color: #F08080; /* Light coral */
+    font-family: 'Dancing Script', cursive; /* Loopier font */
+  }
+  
+  .custom-brand {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .custom-link {
+    color: white;
+    font-size: 18px;
+  }
+  
+  .custom-link:hover,
+  .custom-link:focus {
+    color: #FFE4E1; /* Misty rose */
+  }
