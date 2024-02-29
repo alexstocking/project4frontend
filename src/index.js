@@ -4,6 +4,7 @@ import './interceptors/axios.js';
 import App from './App.jsx';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ProductsProvider } from './contexts/ProductContext.js';
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

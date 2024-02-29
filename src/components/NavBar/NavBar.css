@@ -1,19 +1,35 @@
-.custom-navbar {
-    background-color: #F08080; /* Light coral */
-    font-family: 'Dancing Script', cursive; /* Loopier font */
-  }
-  
+.custom-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* Adjust the width and height as needed */
+  height: 100px;
+  border: 1px transparent;
+  border-radius: 50%;
+  margin-top: 10vh;
+  margin-bottom:10vh
+}
+
+@media (max-width: 991px) {
   .custom-brand {
-    color: white;
-    font-size: 24px;
+    position: static;
+    transform: none;
+    margin: auto;
+    padding-right: 10vh
   }
-  
-  .custom-link {
-    color: white;
-    font-size: 18px;
-  }
-  
-  .custom-link:hover,
-  .custom-link:focus {
-    color: #FFE4E1; /* Misty rose */
-  }
+}
+
+.RED {
+  border: 10px solid red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1vh;
+}
+
+.BLUE {
+  border: 10px solid blue;
+  position: relative;
+  width: 100%;
+}
+
