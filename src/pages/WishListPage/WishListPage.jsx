@@ -15,7 +15,7 @@ export default function WishListPage({ user }) {
 
     useEffect(() => {
         getWishListProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
     }, []);
 
     useEffect(() => {

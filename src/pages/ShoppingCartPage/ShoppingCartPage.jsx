@@ -16,7 +16,7 @@ export default function ShoppingCartPage({ user }) {
     useEffect(() => {
         getShoppingCartProducts();
         console.log(userCart)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
     }, []);
     
     const userCart = carts.filter(cart => cart.user === user.id);

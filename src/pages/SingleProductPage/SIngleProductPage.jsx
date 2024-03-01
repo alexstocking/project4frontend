@@ -66,7 +66,7 @@ export default function SingleProductPage({user}) {
     useEffect(() => {
       getSingleProduct(id)
       setIsUpdated(false)
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line
     }, [isUpdated])
 
 
