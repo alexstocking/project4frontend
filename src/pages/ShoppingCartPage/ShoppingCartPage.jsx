@@ -41,7 +41,7 @@ export default function ShoppingCartPage({ user }) {
             <h1>{user.first_name}'s Shopping Cart</h1>
             {userCart.length > 0 ? (
                 <Row>
-                    <Col xs={8}>
+                    <Col xs={12} md={8}>
                         <ul className="cart-list">
                             {userCart.map((cart) =>
                                 cart.cart_product.sort((a, b) => a.product.name.localeCompare(b.product.name)).map((cp) => {
@@ -66,7 +66,7 @@ export default function ShoppingCartPage({ user }) {
                             )}
                         </ul>
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={12} md={4}>
                         <PersonalizationForm userCart={userCart}/>
                         <br />
                         <div className="total-price">
