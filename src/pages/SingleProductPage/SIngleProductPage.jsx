@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import axios from 'axios'
 import { useProducts } from "../../contexts/ProductContext";
 import { useParams, Link } from "react-router-dom";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button } from "react-bootstrap";
 import { currencyFormatter } from "../../utilities/currencyFormatter"
+import '../../App.css'
 
 
-export default function SingleProductPage() {
+
+export default function SingleProductPage({user}) {
     const {product, getSingleProduct, isUpdated, setIsUpdated, addToCart, addToList} = useProducts()
     const { id } = useParams()
     const formattedPrice = currencyFormatter.format(product.price)
@@ -69,26 +71,36 @@ export default function SingleProductPage() {
 
 
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundAttachment: "fixed",}}>
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col md={8}>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>{product.name}</Card.Title>
-                            <Card.Text>{product.description}</Card.Text>
-                            <Card.Text>Price: {formattedPrice}</Card.Text>
-                            <Card.Text>Stock Left: {product.stock}</Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <Button variant="primary" onClick={handleAddToCart} >Add to Cart</Button> &nbsp;
-                            <Button variant="primary" onClick={handleAddToList} >Wish List</Button> &nbsp;
-                            <Link to={'/products'} ><Button variant="secondary" >Back to Products</Button></Link>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>        
+      <div className ='font' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundAttachment: "fixed",}}>
+        <Row className="justify-content-md-center">
+            <Col md={4}>
+                {/* Column for the image */}
+                <Card>
+                    <Card.Img src={product.image} alt={product.name} />
+                </Card>
+            </Col>
+            <Col md={8}>
+                {/* Column for product details */}
+                <Card>
+                    <Card.Body>
+                        <Card.Title><strong>{product.name}</strong></Card.Title>
+                        <Card.Text>{product.description}</Card.Text>
+                        <Card.Text><strong>{formattedPrice}</strong></Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      {user ? (
+                        <>
+                        <Button variant="dark" onClick={handleAddToCart} >Add to Cart</Button> &nbsp;
+                        <Button variant="dark" onClick={handleAddToList} >Wish List</Button> &nbsp;
+                        <Link to={'/products'} ><Button variant="outline-dark" >Back to Products</Button></Link>
+                        </>
+                        ) : (
+                          <Link to={'/products'} ><Button variant="outline-dark" >Back to Products</Button></Link>
+                        )}
+                    </Card.Footer>
+                </Card>
+            </Col>
+        </Row>  
       </div>
   );
 }

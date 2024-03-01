@@ -17,7 +17,7 @@ export default function NavBar({ user }) {
   window.addEventListener('resize', checkScreenSize);
 
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#8A9A5B', height: '20vh', marginBottom: '10vh' }}>
+    <Navbar expand="lg" style={{ backgroundColor: '#8A9A5B', height: '20vh', marginBottom: '10vh' }} className='font'>
       <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
           <Container fluid className="d-flex justify-content-between align-items-center">
         <Navbar.Brand as={Link} to="/" className="custom-brand d-flex align-items-center justify-content-center">
@@ -33,13 +33,18 @@ export default function NavBar({ user }) {
             </Nav>
           ) : (
             <Nav className="me-auto BLUE" style={{display: 'flex', width: '100%', justifyContent: 'space-between', paddingTop: '15vh'}}>
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
-            <Nav.Link as={Link} to="/contactus">Contact Us</Nav.Link>
-            <Nav.Link as={Link} to="/products">Products</Nav.Link>
+              <Nav className='YELLOW'>
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/products">Products</Nav.Link>
+              </Nav>
+              <Nav className="GREEN">
+                <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
+                <Nav.Link as={Link} to="/request">Bespoke Requests</Nav.Link>
+              </Nav>
+
           </Nav>
           )}
-        <Nav className="RED">
+        <Nav className="ml-auto RED">
           {user ? (
             <>
               <Nav.Link href="/wishlist">
@@ -53,7 +58,7 @@ export default function NavBar({ user }) {
               </Nav.Link>
               <Nav.Link href="/cart">
                     <img
-                      src="https://www.shareicon.net/data/2016/02/07/281223_cart_512x512.png"
+                      src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
                       width="40vh"
                       height="35vh"
                       className="d-inline-block align-top"

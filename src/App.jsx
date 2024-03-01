@@ -3,8 +3,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import HomePage from "./pages/HomePage/HomePage.jsx"
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx"
 import AboutPage from "./pages/AboutPage/AboutPage.jsx"
-import ContactUsPage from "./pages/ContactUsPage/ContactUsPage.jsx"
 import NavBar from "./components/NavBar/NavBar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import Logout from "./components/Logout/Logout.jsx";
 import Login from "./components/Login/Login.jsx";
 import SignUp from "./components/SignUp/SignUp.jsx";
@@ -54,18 +54,18 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className='app-container'>
       <NavBar user={user} />
       <Container>
         {loading ? (
           <p>Loading... </p>
         ): (
-        <Routes>
+        <Routes className='font'>
           <Route path='/' element={ <HomePage /> }/>
           <Route path='/products' element={ <ProductsPage user={user}/> }/>
           <Route path='/products/:id' element={ <SingleProductPage user={user} />}/>
           <Route path='/aboutus' element={ <AboutPage /> }/>
           <Route path='/account' element={ <AccountPage user={user} /> }/>
-          <Route path='/contactus' element={ <ContactUsPage /> }/>
           <Route path='/cart' element={ <ShoppingCartPage user={user}/> }/>
           <Route path='/wishlist' element={ <WishListPage user={user}/> }/>
           <Route path='/request' element={ <RequestPage user={user}/> }/>
@@ -77,6 +77,8 @@ function App() {
         </Routes>
         )}
       </Container>
+      <Footer />
+    </div>
     </BrowserRouter>
   );
 }

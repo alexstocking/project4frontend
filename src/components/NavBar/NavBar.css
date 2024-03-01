@@ -7,8 +7,17 @@
   border: 1px transparent;
   border-radius: 50%;
   margin-top: 10vh;
-  margin-bottom:10vh
+  margin-bottom:10vh;
+  z-index: 999;
 }
+
+@media (max-width: 1400px) {
+  .custom-brand {
+    scale: 0.8;
+  }
+}
+
+
 
 @media (max-width: 991px) {
   .custom-brand {
@@ -19,17 +28,42 @@
   }
 }
 
+
+
 .RED {
-  border: 10px solid red;
+  padding: 10px;
   position: absolute;
   top: 0;
   right: 0;
-  padding-right: 1vh;
+  padding-right: 2vh;
+  font-family: "Playfair Display", serif !important;
+  font-size: 2.5vmin;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .BLUE {
-  border: 10px solid blue;
   position: relative;
+  padding-bottom: 20px;
   width: 100%;
+  font-family: "Playfair Display", serif !important;
+  font-size: 2.8vmin;
+  font-weight: 600;
+  font-style: normal;
 }
 
+@media (max-width: 1400px) {
+  .BLUE {
+    font-size: 2.5vmin;
+  }
+}
+
+.YELLOW {
+  gap: 20vh;
+  margin-left: 200px
+}
+
+.GREEN {
+  gap: 15vh;
+  margin-right: 150px
+}

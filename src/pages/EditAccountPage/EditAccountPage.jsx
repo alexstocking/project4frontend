@@ -1,6 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 import { useRef } from "react";
+import '../../App.css'
 
 
 export default function EditAccountPage({user}) {
@@ -30,7 +31,7 @@ export default function EditAccountPage({user}) {
         window.location.href = "/account"
       }
   return (
-    <Container>
+    <Container className="font">
         <Form onSubmit={handleSubmit}>
         <Form.Group>
             <Form.Label>Username</Form.Label>

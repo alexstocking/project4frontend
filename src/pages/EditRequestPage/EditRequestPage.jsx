@@ -2,6 +2,8 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom'
+import '../../App.css'
+
 
 export default function EditRequestPage({user}) {
     const { requestId } = useParams()
@@ -57,7 +59,7 @@ export default function EditRequestPage({user}) {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="font">
             <Form.Group controlId="name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} />
@@ -78,7 +80,7 @@ export default function EditRequestPage({user}) {
                 <Form.Control type="text" name="price_range" value={formData.price_range} onChange={handleChange} placeholder='What you are able to pay for the product'/>
             </Form.Group>
             <br />
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
                 Edit Request
             </Button>
         </Form>

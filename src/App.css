@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.font {
+    font-family: "DM Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2vmin;
+}
+
+Link {
+    cursor: pointer !important;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+  padding-bottom:20px;
+}
+
+.footer {
+  background-color: #8A9A5B;
+  padding: 10px 0;
+  font-family: "Playfair Display", serif !important;
+  font-size: 1.8vmin;
+  flex-shrink: 0;
+  margin-top: auto; /* Push the footer to the bottom */
+  padding-top: 20px; /* Add some top padding */
+}

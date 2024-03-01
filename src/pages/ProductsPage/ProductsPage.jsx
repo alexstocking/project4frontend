@@ -2,6 +2,8 @@ import ProductCard from "../../components/ProductCard/ProductCard"
 import { useEffect } from "react"
 import { useProducts } from "../../contexts/ProductContext"
 import { Container } from "react-bootstrap"
+import '../../App.css'
+
 
 export default function ProductsPage({user}) {
   const { products, getProducts, isUpdated } = useProducts()
@@ -12,7 +14,7 @@ export default function ProductsPage({user}) {
   }, [isUpdated])
 
   return (
-    <Container style={{
+    <Container className='font' style={{
       display: "grid",
       gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
       gap: "1rem",

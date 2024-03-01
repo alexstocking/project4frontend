@@ -1,0 +1,30 @@
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-details li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.blackIcon {
+    color: black;
+    scale: 1.5;
+}
+
+.email {
+    color: black;
+}
