@@ -48,7 +48,7 @@ export default function NavBar({ user }) {
           {user ? (
             isSmallScreen ? (
             <>
-              <Nav.Link href="/wishlist">
+              <Nav.Link as={Link} to="/wishlist">
                     <img
                       src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/add-to-wishlist-icon.png"
                       width="30vh"
@@ -57,7 +57,7 @@ export default function NavBar({ user }) {
                       alt="Shopping cart logo"
                     />
               </Nav.Link>
-              <Nav.Link href="/cart">
+              <Nav.Link as={Link} to="/cart">
                     <img
                       src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
                       width="30vh"
@@ -73,7 +73,7 @@ export default function NavBar({ user }) {
             </>
             ) : (
             <>
-              <Nav.Link href="/wishlist">
+              <Nav.Link as={Link} to="/wishlist">
                     <img
                       src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/add-to-wishlist-icon.png"
                       width="40vh"
@@ -82,7 +82,7 @@ export default function NavBar({ user }) {
                       alt="Shopping cart logo"
                     />
               </Nav.Link>
-              <Nav.Link href="/cart">
+              <Nav.Link as={Link} to="/cart">
                     <img
                       src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
                       width="40vh"
