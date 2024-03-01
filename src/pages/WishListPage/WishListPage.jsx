@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useProducts } from "../../contexts/ProductContext";
 import { currencyFormatter } from '../../utilities/currencyFormatter';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Image, Row, Col } from 'react-bootstrap';
 import axios from "axios";
 import '../../App.css';
@@ -13,7 +13,6 @@ export default function WishListPage({ user }) {
     const [userList, setUserList] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
-    const navigate = useNavigate()
 
     useEffect(() => {
         getWishListProducts();
@@ -26,7 +25,7 @@ export default function WishListPage({ user }) {
 
     const handleRemoveFromList = (listProductId) => {
         removeFromList(listProductId);
-        navigate('/wishlist')
+        window.location.href='/wishlist'
     };
 
     const handleAddToCart = async (productId) => {
