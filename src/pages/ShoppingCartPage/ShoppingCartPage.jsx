@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useProducts } from "../../contexts/ProductContext"
 import { currencyFormatter } from '../../utilities/currencyFormatter'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button, Image, Row, Col } from 'react-bootstrap'
 import '../../App.css'
 import './ShoppingCartPage.css'
@@ -10,6 +10,7 @@ import PersonalizationForm from "../../components/PersonalizationForm/Personaliz
 
 export default function ShoppingCartPage({ user }) {
     const { carts, getShoppingCartProducts, removeFromCart } = useProducts()
+    const navigate = useNavigate()
 
 
     
@@ -23,7 +24,7 @@ export default function ShoppingCartPage({ user }) {
 
     const handleRemoveFromCart = (cartProductId) => {
         removeFromCart(cartProductId);
-        window.location.href='/cart'
+        navigate('/cart')
     };
 
     const calculateTotalPrice = () => {

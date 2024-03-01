@@ -2,8 +2,11 @@ import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 import { useRef } from "react";
 import '../../App.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
+    const navigate = useNavigate()
+
     const userRef = useRef()
     const emailRef = useRef()
     const firstRef = useRef()
@@ -30,7 +33,7 @@ export default function Signup() {
             withCredentials: true,
           }
         );
-        window.location.href = "/login"
+        navigate("/login")
       }
   return (
     <Container className="font">
